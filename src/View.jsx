@@ -12,7 +12,7 @@ export const View = () => {
           <Route path="/news" exact component={Section}/>
           <Route path="/sport" exact component={Section}/>
           <Route path="/sport/football" exact component={Section}/>
-          <Route path="/sport/bocs" exact component={Section}/>
+          <Route path="/sport/boks" exact component={Section}/>
           <Route path="/sport/basketball" exact  component={Section}/>
           <Route path="/sport/biathlon" exact component={Section}/>
           <Route path="/sport/hockey" exact component={Section}/>

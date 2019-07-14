@@ -14,11 +14,12 @@ export const StartPage = (props) => {
     
 
     return (
-        <>
-            <div className="container">
-                <div className="text-center border border-secondary">
-                    <img src="http://localhost:3000/reklama.png" alt="Реклама" width="500" height="100"/>
-                </div>
+        <div>
+            <div className="text-center border border-secondary d-none d-lg-block">
+                <img src="http://localhost:3000/reklama.png" alt="Реклама" width="500" height="100"/>
+            </div>
+           
+            <div className="container d-none d-lg-block">
                 <div className="text-center">
                     <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер"/>
                 </div>
@@ -26,25 +27,31 @@ export const StartPage = (props) => {
                     <img src="http://localhost:3000/slogan.png" alt=".."/>
                 </div>
             </div>
-            <nav className="navbar-nav navbar-light bg-light">
-                
-
-                <div className="row" id="navbarSupportedContent">
-                    
-                    <div><Link to="/news">НОВОСТИ</Link></div>
-                    
-                    
-                    <div><Link to="/sport">СПОРТ</Link></div>
-                    
-                    
-                    <div><Link to="/finance">ФИНАНСЫ</Link></div>
-                    
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер" className="d-lg-none"/>
+                </div>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <Link to="/news" className="nav-item-dropdown nav-link active text-body font-weight-bold">НОВОСТИ</Link>
+                    <Link to="/sport" className="nav-item nav-link text-body font-weight-bold">СПОРТ</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body font-weight-bold">ФИНАНСЫ</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body font-weight-bold">ВИДЕО</Link>
+                    <Link to="/news" className="nav-item nav-link text-body font-weight-bold">НАСТРОЕНИЕ</Link>
+                    <Link to="/sport" className="nav-item nav-link text-body font-weight-bold">АВТО</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body font-weight-bold">ВЕЛО</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body font-weight-bold">ТЕХНО</Link>
+                    <Link to="/news" className="nav-item nav-link text-body font-weight-bold">АРХИТЕКТУРА</Link>
+                    <Link to="/sport" className="nav-item nav-link text-body font-weight-bold">ШОУ-BIZТ</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body font-weight-bold">LIFESTYLE</Link>
+                    <Link to="/finance" className="nav-item nav-link text-body text-sm-left">СЕМЬЯ И ДЕТИ</Link>
+                    </div>
                 </div>
             </nav>
-            <Link to="/news">НОВОСТИ</Link>
-            <Link to="/sport">СПОРТ</Link>
-            <Link to="/finance">ФИНАНСЫ</Link>
-            <Link to="/sport/biathlon" >СПОРТ-Биатлон</Link>
+        <hr></hr>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-5">
@@ -166,6 +173,6 @@ export const StartPage = (props) => {
                     }
                 </ul>
             </div>
-        </>
+        </div>
     )
 };
