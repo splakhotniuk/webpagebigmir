@@ -1,30 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Section} from './Section.jsx'
 import articles from './articles.jsx'
+import thematics from './thematics.jsx'
+import pathSegment from './pathSegment.jsx'
 
+var thematicPathes = [];
+
+const addThematicPathes = (theme) => {
+  var thematicPath = pathSegment[theme.thematic];
+  thematicPathes.push(thematicPath, theme.subthemes.map(subtheme => (thematicPath + pathSegment[subtheme])));
+}
+
+thematics.map(addThematicPathes);
+console.log("ВСЕ ТЕМАТИЧЕСКИЕ ПУТИ ", thematicPathes);
+thematicPathes = thematicPathes.flat();
+console.log("ВСЕ ТЕМАТИЧЕСКИЕ ПУТИ ", thematicPathes);
 
 export const View = () => {
   return (
     <div>
       <Router>
-          <Route path="/" exact component={Section}/>
-          <Route path="/news" exact component={Section}/>
-          <Route path="/sport" exact component={Section}/>
-          <Route path="/sport/football" exact component={Section}/>
-          <Route path="/sport/boks" exact component={Section}/>
-          <Route path="/sport/basketball" exact  component={Section}/>
-          <Route path="/sport/biathlon" exact component={Section}/>
-          <Route path="/sport/hockey" exact component={Section}/>
-          <Route path="/finance" exact component={Section}/>
-          <Route path="/finance/personalbudget/" exact component={Section}/>
-          <Route path="/finance/economy/" exact component={Section}/>
-          <Route path="/finance/business/" exact component={Section}/>
-          <Route path="/finance/realty/" exact component={Section}/>
-          <Route path="/finance/career/" exact component={Section}/>
-        {
-          articles.map(article => <Route path={article.articlePath} exact component={Section} key={article.number}/>)
-        }
+        <Route path="/" exact component={Section}/>
+        {thematicPathes.map(thematicPath => <Route path={thematicPath} exact component={Section} key={thematicPath}/>)}
+        {articles.map(article => <Route path={article.articlePath} exact component={Section} key={article.number}/>)}
       </Router>
     </div>
   );

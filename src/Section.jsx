@@ -9,20 +9,20 @@ export const Section = (props) => {
    
     console.log("Все статьи", articles)
     const pageArticles = articles.filter(article => article.thematic==="СПОРТ");
-    const realtyArticles = articles.filter(article => article.subtheme=="Недвижимость")
+    const realtyArticles = articles.filter(article => article.subtheme==="Недвижимость")
     console.log("Статьи о спорте", pageArticles);
     console.log("Статьи о недвижимости", realtyArticles);
 
     
         
 
-    if ( props.match.path == "/") {
+    if ( props.match.path === "/") {
         return (<StartPage articles={articles}/>)
     }
     const thematicPageArticles = articles.filter(article => 
-        article.thematicPath == props.match.path || 
-        article.subthemePath == props.match.path ||
-        article.articlePath == props.match.path)
+        article.thematicPath === props.match.path || 
+        article.subthemePath === props.match.path ||
+        article.articlePath === props.match.path)
 
     return (<ThematicPage articles={thematicPageArticles}/>)
 };
