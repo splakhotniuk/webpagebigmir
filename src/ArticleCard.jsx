@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export const ArticleCard = (props) => {
     const badgeColor = {
         "НОВОСТИ": "primary",
@@ -19,18 +20,29 @@ export const ArticleCard = (props) => {
         return hours + ":" +  minutes
     }
 
+    const cardWidth = () => {
+        console.log(document.getElementById(1111).offsetWidth)
+    } 
+
+    
+   
+    
+    
+
   return (
+      
     <div className="card bg-dark text-white border-0 rounded-0">
+        
         <img src={props.article.picture} className="card-img rounded-0" alt="..."/>
         <div className="card-img-overlay">
             <span className={"badge badge-" + badgeColor[props.article.thematic] + " card-title"}>{props.article.thematic}</span>
         </div>
-         
+      
         <div className="card-img-overlay d-flex align-items-end">
             <div className="container">
                 
                 <div className="row">
-                    <div className="card-text">{props.article.heading}</div>
+                    <div className="card-text" id="ttt">{props.article.heading}</div>
                 </div>
                 <div className="row">
                     <div className="card-text">{renderArticleTime(props.article.time)}</div>
@@ -38,6 +50,8 @@ export const ArticleCard = (props) => {
             </div>
         </div>
         
+        
+            
     </div>
   );
 };

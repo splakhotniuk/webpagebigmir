@@ -50,34 +50,56 @@ export const StartPage = (props) => {
 
     return (
         <div className="container-fluid">
-            <div className="text-center border border-secondary d-none d-lg-block">
-                <img src="http://localhost:3000/reklama.png" alt="Реклама" width="500" height="100"/>
-            </div>
-           
-            <div className="container d-none d-lg-block">
+            <div className="appear">
                 <div className="text-center">
-                    <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер"/>
+                            <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер"/>
                 </div>
-                <div className="text-center">
-                    <img src="http://localhost:3000/slogan.png" alt=".."/>
-                </div>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed">
+                        <div>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер" className="d-lg-none"/>
+                        </div>
+                        <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                {
+                                    ["НОВОСТИ", "СПОРТ", "ФИНАНСЫ", "ВИДЕО", "НАСТРОЕНИЕ", "АВТО", "ВЕЛО", "ТЕХНО", "АРХИТЕКТУРА", "ШОУ-BIZ", "LIFESTYLE", "СЕМЬЯ И ДЕТИ"].map(createNavBarHead)
+                                }
+                            </div>
+                        </div>
+                </nav>
             </div>
+            <div className="heading">
+                <div className="text-center border border-secondary d-none d-lg-block">
+                    <img src="http://localhost:3000/reklama.png" alt="Реклама" width="500" height="100"/>
+                </div>
             
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер" className="d-lg-none"/>
-                </div>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        {
-                            ["НОВОСТИ", "СПОРТ", "ФИНАНСЫ", "ВИДЕО", "НАСТРОЕНИЕ", "АВТО", "ВЕЛО", "ТЕХНО", "АРХИТЕКТУРА", "ШОУ-BIZ", "LIFESTYLE", "СЕМЬЯ И ДЕТИ"].map(createNavBarHead)
-                        }
+                <div className="container brendbanner d-none d-lg-block">
+                    <div className="text-center">
+                        <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер"/>
+                    </div>
+                    <div className="text-center">
+                        <img src="http://localhost:3000/slogan.png" alt="Слоган"/>
                     </div>
                 </div>
-            </nav>
+                
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed">
+                    <div>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <img src="http://localhost:3000/brendbanner.png" alt="Брендбаннер" className="d-lg-none"/>
+                    </div>
+                    <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            {
+                                ["НОВОСТИ", "СПОРТ", "ФИНАНСЫ", "ВИДЕО", "НАСТРОЕНИЕ", "АВТО", "ВЕЛО", "ТЕХНО", "АРХИТЕКТУРА", "ШОУ-BIZ", "LIFESTYLE", "СЕМЬЯ И ДЕТИ"].map(createNavBarHead)
+                            }
+                        </div>
+                    </div>
+                </nav>
+            </div>
             <hr></hr>
             <div className="container-fluid">
                 <div className="row">
@@ -108,55 +130,55 @@ export const StartPage = (props) => {
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[5].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block text-left">
+                                                <div className="carousel-caption  text-left">
                                                     <h5>{props.articles[5].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[1].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block text-fluid">
+                                                <div className="carousel-caption  text-fluid">
                                                     <h5>{props.articles[1].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[7].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[7].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[2].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[2].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[6].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[6].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[3].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[3].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[8].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[8].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[4].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption">
                                                     <h5>{props.articles[4].heading}</h5>
                                                 </div>
                                             </div>
                                             <div className="carousel-item">
                                                 <img src={props.articles[9].picture} className="d-block w-100" alt="..."/>
-                                                <div className="carousel-caption d-none d-md-block">
+                                                <div className="carousel-caption d-none">
                                                     <h5>{props.articles[9].heading}</h5>
                                                 </div>
                                             </div>
@@ -195,65 +217,36 @@ export const StartPage = (props) => {
                         </div>
 
                         <div className="d-none d-lg-block mt-3">
-                            <div className="row">
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_1.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Вопрос-ответ</span>
-                                </div>
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_2.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Объявления</span>
-                                </div>
-                                <div className="col text-center flex-shrink-1">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_3.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Недвижимость</span>
-                                </div>
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_4.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Автопродажа</span>
-                                </div>
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_5.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Онлайн-магазин</span>
-                                </div>
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_6.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Почта</span>
-                                </div>
-                                <div className="col text-center">
-                                    <img src="http://localhost:3000/pictures/icons/icons1_7.svg" className="card-img-top" alt="Изображение" />
-                                    <span>Погода</span>
-                                </div>
-                            </div>
-                            <div className="container">
-                                <div className="d-flex justify-content-between">
-                                    <div className="flex-1 text-center m-2">
-                                        <img src="http://localhost:3000/pictures/icons/icons1_1.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Вопр</p>
+                            
+                            <div className="container-fluid">
+                                <div className="d-flex justify-content-between aligne-content-center">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
+                                        <img src="http://localhost:3000/pictures/icons/icons1_1.svg" className="card-img-top p-6" alt="Изображение" />
+                                        <p>Вопрос-ответ</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_2.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Объя</p>
+                                        <p>Объявления</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_3.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Недв</p>
+                                        <p>Недвижимость</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_4.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Авто</p>
+                                        <p>Автопрoдажа</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_5.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Онла</p>
+                                        <p>Онлайн-магазин</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_6.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Почт</p>
+                                        <p>Почта</p>
                                     </div>
-                                    <div className="flex-1 text-center m-2">
+                                    <div className="flex-1 text-center m-2 card border-0 rounded-0">
                                         <img src="http://localhost:3000/pictures/icons/icons1_7.svg" className="card-img-top" alt="Изображение" />
-                                        <p>Пого</p>
+                                        <p>Погода</p>
                                     </div>
                                 </div>
                             </div>
